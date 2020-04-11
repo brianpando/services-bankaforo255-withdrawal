@@ -22,10 +22,10 @@ import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @Component
-public class DepositEventProducer {
+public class WithdrawalEventProducer {
 
 	String topic ="transaction-events";
-	private Logger log = LoggerFactory.getLogger(DepositEventProducer.class);
+	private Logger log = LoggerFactory.getLogger(WithdrawalEventProducer.class);
 	
 	@Autowired
 	KafkaTemplate <Integer,String > KafkaTemplate ;

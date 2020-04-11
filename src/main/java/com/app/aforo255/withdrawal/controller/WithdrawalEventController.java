@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.aforo255.withdrawal.domain.Transaction;
-import com.app.aforo255.withdrawal.producer.DepositEventProducer;
+import com.app.aforo255.withdrawal.producer.WithdrawalEventProducer;
 import com.app.aforo255.withdrawal.service.ITransactionService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 @RestController
-public class DepositEventController {
+public class WithdrawalEventController {
 
-	private Logger log = LoggerFactory.getLogger(DepositEventController.class);
+	private Logger log = LoggerFactory.getLogger(WithdrawalEventController.class);
 	@Autowired
 	private ITransactionService transactionService; 
 
 	@Autowired
-	DepositEventProducer depositEventProducer;
+	WithdrawalEventProducer depositEventProducer;
 	@PostMapping("/v1/withdrawalEvent")
 	public ResponseEntity<Transaction> postLibraryEvent(@RequestBody Transaction transactionEvent) throws JsonProcessingException{
 		
